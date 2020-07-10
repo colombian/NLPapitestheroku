@@ -7,6 +7,9 @@ from src.models.predict import predict
 
 app = FastAPI()
 
+@app.get('/{anme}')
+async def root(name:str):
+    return {'smg':f'Hello {name}'}
 
 @app.post('/train')
 async def train_model():
