@@ -7,7 +7,7 @@ from src.models.predict import predict
 
 app = FastAPI()
 
-@app.get('/{name}')
+@app.get('/testapp/{name}')
 async def root(name:str):
     return {'smg':f'Hello {name}'}
 
