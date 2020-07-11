@@ -2,7 +2,7 @@ from typing import List
 
 from fastapi import FastAPI, Query
 
-#from src.models.train import train
+from src.models.train import train
 from src.models.predict import predict
 
 app = FastAPI()
@@ -11,11 +11,11 @@ app = FastAPI()
 async def root(name:str):
     return {'smg':f'Hello {name}'}
 
-# @app.post('/train')
-# async def train_model():
-    # train()
+@app.post('/train')
+async def train_model():
+    train()
 
-    # return {'Result': 'model.pkl produced'}
+    return {'Result': 'model.pkl produced'}
 
 
 @app.get('/predict')
